@@ -80,19 +80,19 @@ class Calculator extends React.Component {
         {
             if(i<9)
             {
-                item = <input type='button' value={`${i+1}`} className='num-button' onClick={() => this.buttonClicked(`${i+1}`)}/>
+                item = <input key={i} id={`num${i}`} type='button' value={`${i+1}`} className='num-button' onClick={() => this.buttonClicked(`${i+1}`)}/>
             }
             else if(i === 9)
             {
-                item = <input type='button' value={`0`} className='num-button' onClick={() => this.buttonClicked(`0`)}/>
+                item = <input key={i} type='button' value={`0`} className='num-button' onClick={() => this.buttonClicked(`0`)}/>
             }
             else if (i === 10)
             {
-                item = <input type='button' value={`=`} className='num-button equal' onClick={this.calculate} />
+                item = <input key={i} type='button' value={`=`} className='num-button equal' onClick={this.calculate} />
             }
             else if (i === 11)
             {
-                item = <input type='button' value={`<`} className='num-button back' onClick={this.erase} />
+                item = <input key={i} type='button' value={`<`} className='num-button back' onClick={this.erase} />
             }
 
             array.push(item);
